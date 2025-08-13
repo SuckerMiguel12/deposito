@@ -12,7 +12,7 @@ export default function App() {
   }, []);
 
   const addItem = () => {
-    if (!name.trim()) return; // não adiciona vazio
+    if (!name.trim()) return;
     axios.post("http://localhost:3000/items", { name })
       .then(res => {
         setItems([...items, res.data]);
@@ -53,7 +53,6 @@ export default function App() {
               className="bg-white bg-opacity-30 rounded-lg p-3 shadow-md flex items-center justify-between"
             >
               <span className="font-medium text-black">{item.name}</span>
-              {/* Aqui você pode adicionar botões de editar ou excluir */}
             </li>
           ))}
         </ul>
